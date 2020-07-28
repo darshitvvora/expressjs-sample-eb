@@ -1,59 +1,31 @@
-# expressjs-sample
+# NodeJS ExpressJS AWS Elasticbeanstalk sample
 
-How to build this skeleton app from scracth
+Sample 
+
+## Technologies Used
+- [NodeJS >=12.16.3](https://nodejs.org/en/)
+- [NPM >=6.14.4](https://www.npmjs.com/)
+- [Git](https://git-scm.com/)
+- AWS ElasticbeanStalk
 
 
-Install the express js generator
+## Pre Requisite
+- Install NodeJS. Recommended to use [NVM](https://github.com/nvm-sh/nvm)
 
-```
-npm install -g express-generator
-```
 
-Run generator and when promoted press y
-```
-express
-```
+## Installation
 
-Install all dependencies
-```
+Use the node package manager [npm](https://www.npmjs.com/) to install a sample.
+
+```bash
+git clone git@github.com:darshitvvora/expressjs-sample-eb.git
+
 npm i
-````
-
-Start server in development mode
-```
-DEBUG=expressjs-sample:* npm start
+npm start
 ```
 
-Go to `https://localhost:3000` within your web browser
+## AWS Deployment Steps
 
-create the following files:
 
-.ebextensions/nodecommand.config
-```
-  aws:elasticbeanstalk:container:nodejs:
-    NodeCommand: "npm start"
-```
-
-.ebextensions/staticfiles.config
-```
-option_settings:
-  aws:elasticbeanstalk:container:nodejs:staticfiles:
-    /public: /public
-```
-
-When uploading to Elastic Beanstalk zip the contents of the root project
-folder and include `.ebextensions`. Excluding `.git` since this could
-contain sensitive credentials.
-
-![](https://github.com/ExamProCo/expressjs-sample/blob/master/docs/zipping.jpg)
-
-# Show your hidden files and folders
-Omitting `.ebextensions` is the most common reason for failed
-deployments to Elastic Beanstalk
-
-You may need to show all hidden files and folders. On OSX you can view all hidden files and folders by pressing `Command + Shift + .`
-
-# Credits
-
-Space background borrowed from here:
-https://codepen.io/NazarTheVis/pen/zqXMqP
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
